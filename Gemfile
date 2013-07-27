@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'devise'
+gem 'cancan'
+gem 'role_model'
 gem 'thin'
 
 # Bundle edge Rails instead:
@@ -14,7 +16,18 @@ group :development, :test do
 end
 
 group :development do
-  gem "letter_opener"
+  gem 'letter_opener'
+end
+
+group :test do
+  gem 'mocha'
+  gem 'mailcatcher' 
+  gem 'fabrication'
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'faker'
 end
 
 # Gems used only for assets and not required

@@ -2,53 +2,53 @@ class TestDefinitionsController < ApplicationController
   # GET /tests
   # GET /tests.json
   def index
-    @tests = Test.all
+    @test_definitions = TestDefinition.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @tests }
+      format.json { render json: @test_definitions }
     end
   end
 
   # GET /tests/1
   # GET /tests/1.json
   def show
-    @test = Test.find(params[:id])
+    @test_definition = TestDefinition.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @test }
+      format.json { render json: @test_definition }
     end
   end
 
   # GET /tests/new
   # GET /tests/new.json
   def new
-    @test = Test.new
+    @test_definition = TestDefinition.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @test }
+      format.json { render json: @test_definition }
     end
   end
 
   # GET /tests/1/edit
   def edit
-    @test = Test.find(params[:id])
+    @test_definition = TestDefinition.find(params[:id])
   end
 
   # POST /tests
   # POST /tests.json
   def create
-    @test = Test.new(params[:test])
+    @test_definition = TestDefinition.new(params[:test])
 
     respond_to do |format|
-      if @test.save
-        format.html { redirect_to @test, notice: 'Test was successfully created.' }
-        format.json { render json: @test, status: :created, location: @test }
+      if @test_definition.save
+        format.html { redirect_to @test_definition, notice: 'Test was successfully created.' }
+        format.json { render json: @test_definition, status: :created, location: @test_definition }
       else
         format.html { render action: "new" }
-        format.json { render json: @test.errors, status: :unprocessable_entity }
+        format.json { render json: @test_definition.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,15 +56,15 @@ class TestDefinitionsController < ApplicationController
   # PUT /tests/1
   # PUT /tests/1.json
   def update
-    @test = Test.find(params[:id])
+    @test_definition = TestDefinition.find(params[:id])
 
     respond_to do |format|
-      if @test.update_attributes(params[:test])
-        format.html { redirect_to @test, notice: 'Test was successfully updated.' }
+      if @test_definition.update_attributes(params[:test])
+        format.html { redirect_to @test_definition, notice: 'Test was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @test.errors, status: :unprocessable_entity }
+        format.json { render json: @test_definition.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -72,8 +72,8 @@ class TestDefinitionsController < ApplicationController
   # DELETE /tests/1
   # DELETE /tests/1.json
   def destroy
-    @test = Test.find(params[:id])
-    @test.destroy
+    @test_definition = TestDefinition.find(params[:id])
+    @test_definition.destroy
 
     respond_to do |format|
       format.html { redirect_to tests_url }

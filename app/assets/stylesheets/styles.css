@@ -1,0 +1,122 @@
+/* USEPHORIA */
+
+* {font-family: "proxima-nova","Roboto",sans-serif;}
+
+body {margin:0px;padding:0px;color:#222;}
+
+.tiptop {
+	background:#333;
+	width:100%;
+	min-height:50px;
+	margin:0px;
+}
+
+.tiptop ul {
+	width:980px;
+	list-style-type: none;
+	margin:0 auto;
+	text-align: right;
+}
+
+.tiptop ul li {
+	display:inline-block;
+	padding:15px 20px;
+}
+
+.tiptop ul li a {
+	color:#fff;
+	text-decoration: none;
+}
+
+.tiptop ul li a:hover {
+	color:lightyellow;
+}
+
+header {
+	background:url('../images/blurred-bgd.jpg') no-repeat;
+	background-size: 100%;
+	width:100%;
+	color:#fff;
+	min-height:200px;
+}
+
+.header {
+	margin:0 auto;
+	width:980px;
+	padding:20px 20px 60px 20px;
+	overflow: hidden;
+}
+
+
+.header-left {
+	width:40%;
+	min-width:40%;
+	float:left;
+	padding-right:5%;
+}
+
+.header-right {
+	width:45%;
+	float:left;
+}
+
+h1 {}
+p.tagline {line-height:1.5;font-size:16px;}
+
+button {	
+	padding: 10px 20px;
+	background: #d35400;
+	border: none;
+	border-radius: 3px;
+	font-size: 16px;
+	color: #fff;
+	-webkit-box-shadow: 3px 3px 0px rgba(110, 72, 3,1.0);
+	-moz-box-shadow: 3px 3px 0px rgba(110, 72, 3,1.0);
+	box-shadow: 3px 3px 0px rgba(110, 72, 3,1.0);
+	cursor:pointer;
+	margin-top:50px;
+}
+
+button:hover {
+	background: #e67e22;
+}
+
+
+
+
+
+/* MID SECTION */
+
+
+.middle {
+	width:100%;
+	background:#eee;
+	min-height:100px;
+	color:#222;
+}
+
+.midsection {
+	width:980px;
+	padding:20px 20px 60px 20px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+.col1 {
+	float:left;
+	width:29%;
+	margin-right:6%;
+}
+
+.col2 {
+	float:left;
+	width:29%;
+	margin-right:6%;
+}
+
+.col3 {
+	float:left;
+	width:29%;
+}
+
+

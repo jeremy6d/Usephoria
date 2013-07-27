@@ -1,3 +1,11 @@
+
+header { color: black; }
+nav > ul > li { float: left; list-style: none; margin-left: 5px; }
+nav > ul { clear: both; }
+
+
+
+
 /* USEPHORIA */
 
 * {font-family: "proxima-nova","Roboto",sans-serif;}
@@ -45,7 +53,7 @@ body {
 }
 
 header {
-	background:url('../images/blurred-bgd.jpg') no-repeat;
+	background:url(<%= asset_path 'blurred-bgd.jpg' %>) no-repeat;
 	background-size: 100%;
 	width:100%;
 	color:#fff;
@@ -108,7 +116,6 @@ button:hover {
 	border-radius: 5px;
 	left: 25%;
 	text-align: center;
-	border: solid 1px #ccc;
 }
 
 

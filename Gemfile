@@ -28,7 +28,7 @@ group :test do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'capybara'
-  gem 'capybara-webkit'
+  # gem 'capybara-webkit'
   gem 'faker'
 end
 

@@ -5,11 +5,13 @@ gem 'devise'
 gem 'cancan'
 gem 'role_model'
 gem 'thin'
+gem "mongoid", "~> 3.0.0"
+gem 'haml-rails'
+gem 'simple_form'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
-	gem 'sqlite3'
   gem 'letter_opener'  
   gem 'rspec-rails',      '~> 2.0'
   gem 'debugger',         '1.4.0'
@@ -26,7 +28,7 @@ group :test do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'capybara'
-  gem 'capybara-webkit'
+  # gem 'capybara-webkit'
   gem 'faker'
 end
 
@@ -35,7 +37,6 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-sass', '~> 2.3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -44,10 +45,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-group :production do
-	gem 'pg', '0.12.2'
-end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

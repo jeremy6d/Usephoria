@@ -1,4 +1,4 @@
-class TestsController < ApplicationController
+class TestDefinitionsController < ApplicationController
   # GET /tests
   # GET /tests.json
   def index

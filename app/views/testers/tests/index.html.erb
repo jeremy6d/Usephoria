@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag 'testerDashboard' %>
+
+<span>Next Payout: $<span id="money-earned">30.00</span>
+<span id="tests-taken-wrapper">Tests Taken: <span id="tests-taken">110</span></span></span>
+
+<h2>Available Tests</h2>
+
+<div id="tests">
+	<%- @tests.each do |test| %>
+	    <div class="test" id="test-<%= test.to_param %>">
+	        <span class="test-payout">$1.00</span>
+	        <span class="test-title" style="background: url('<%= asset_path 'demo1.png' %>');"></span>
+
+	        <span class="test-link">
+	            <h4><%= test.title %></h4>
+	            <p><%= test.question %></p>
+	            <button><%= link_to "Take Test", testers_test_path(test), method: :get %></button>
+	        </span>
+	    </div>
+	<%- end %>
+</div>
+<div style="clear: both;"></div>

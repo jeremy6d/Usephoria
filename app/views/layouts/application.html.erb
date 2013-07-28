@@ -13,25 +13,23 @@
 
   <div class="tiptop">
     <div style="width:980px;margin:0 auto;">
-    <h1 style="float:left;width:100px;font-size:22px;"><span><a href="/">USEPHORIA</a></span></h1>  
-    <ul>
-      <li><%= link_to( 'Dashboard', controller: 'static', action: 'dashboard' ) %></li>
-      <li><%= link_to( 'Tester Dashboard', controller: 'static', action: 'testerDashboard' ) %></li>
-      <li><%= link_to( 'New Test', controller: 'static', action: 'newTest' ) %></li>
-      <li class="signin"><a href="#">Logout</a></li>
-    </ul>
-
-  </div>
+      <h1 style="float:left;width:100px;font-size:22px;"><span><a href="/">USEPHORIA</a></span></h1>  
+      <ul>
+        <li><%= link_to 'Dashboard', clients_root_path %></li>
+        <li><%= link_to 'Create a test', new_clients_ab_test_path %></li>
+        <li><%= link_to "Take a test", testers_root_path %></li>
+        <li class="signin"><a href="users_sign_out_path">Logout</a></li>
+      </ul>
+    </div>
   </div>
 
   <header style="height:10px;"></header>
-  
-
-
-    <flash>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </flash>
+    <% unless flash.empty? %>
+      <flash>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </flash>
+    <% end %>
     <content>
         <div id="container">
             <%= yield %>
@@ -39,8 +37,8 @@
     </content>
     <footer>
     <div class="footer">
-        <p>UsePhoria is a start up developed at RVA Startup weekend, 2013.</p> 
-        <p>Bradley | Jeremy | Giuseppe | Tiffany | Joshua</p>
+        <p class="developers"><b>Developed by:</b><br />Bradley "Master Mind" Robb<br />Jeremy "Ruby God" Weiland<br />Giuseppe "Nice Hair" Mancone<br />Tiffany "I skipped my vacation to the lake for this" France<br />Joshua "Bit Coin" Angeley</p>
+        <p class="description">UsePhoria is a start up developed at RVA Startup weekend, 2013.</p> 
     </div>
     </footer>
   </body>

@@ -1,0 +1,7 @@
+%h2= @test.title
+= simple_form_for @result, :url => testers_test_results_path(@test) do |form|
+  %p.question= @test.question
+  = render @test, :form => form
+  = form.input :comments, as: :text, label: "Other comments"
+  .form-actions
+    = form.button :submit, "Submit your answer!"

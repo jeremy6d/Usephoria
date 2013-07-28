@@ -12,6 +12,7 @@ Usephoria::Application.routes.draw do
 
   get "static/dashboard"
   get "static/testerDashboard"
+  get "static/howItWorks"
   get "static/test"
   get "static/newTest"
   get "static/landing"

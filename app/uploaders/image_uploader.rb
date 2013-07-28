@@ -4,8 +4,18 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   def store_dir
-    "public/uploads/#{model.id}"
+    "uploads/#{model.id}"
   end
+
+  def cache_dir
+    "/tmp/usephoria"
+  end
+
+  def filename
+    "#{mounted_as}.png"
+  end
+
+  process :convert => 'png'
 
   version :presentation do
     process :resize_to_fit => [300, nil]

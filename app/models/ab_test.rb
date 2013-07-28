@@ -9,12 +9,24 @@ class AbTest < TestDefinition
                   :image_b,
                   :image_b_cache,
                   :question,
-                  :title
+                  :title,
+                  :active,
+                  :user_goal
 
   def aggregate_result
     a_count = results.where(:answer => "A").count
     b_count = results.where(:answer => "B").count
 
-    "A [#{a_count}], B [#{b_count}]"
+    if a_count > b_count
+      diff = a_count - b_count
+      pct = (diff * 100 / b_count).to_i
+      "A by #{pct}%"
+    elsif b_count > a_count
+      diff = b_count - a_count
+      pct = (diff * 100 / a_count).to_i
+      "B by #{pct}%"
+    else
+      "Dead heat"
+    end
   end
 end

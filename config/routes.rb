@@ -6,11 +6,14 @@ Usephoria::Application.routes.draw do
   end
 
   scope "testers" do
+    root to: 'tests_controller#index'
   end
 
   devise_for :users
 
   get "static/dashboard"
+  get "static/testerDashboard"
+  get "static/test"
   get "static/newTest"
   get "static/landing"
   root :to => "static#landing"

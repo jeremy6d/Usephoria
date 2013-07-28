@@ -13,24 +13,23 @@
 
   <div class="tiptop">
     <div style="width:980px;margin:0 auto;">
-    <h1 style="float:left;width:100px;font-size:22px;"><span>USEPHORIA</span></h1>  
-    <ul>
-      <li><%= link_to( 'Dashboard', static_dashboard_path ) %></li>
-      <li><%= link_to( 'New Test', clients_root_path ) %></li>
-      <li class="signin"><a href="#">Logout</a></li>
-    </ul>
-
-  </div>
+      <h1 style="float:left;width:100px;font-size:22px;"><span>USEPHORIA</span></h1>  
+      <ul>
+        <li><%= link_to 'Dashboard', static_dashboard_path %></li>
+        <li><%= link_to 'Create a test', clients_root_path %></li>
+        <li><%= link_to "Take a test", testers_root_path %></li>
+        <li class="signin"><a href="#">Logout</a></li>
+      </ul>
+    </div>
   </div>
 
   <header style="height:10px;"></header>
-  
-
-
-    <flash>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </flash>
+    <% unless flash.empty? %>
+      <flash>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </flash>
+    <% end %>
     <content>
         <div id="container">
             <%= yield %>

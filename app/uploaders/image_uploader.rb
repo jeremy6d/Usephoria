@@ -4,7 +4,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   def store_dir
-    "public/uploads/#{model.id}"
+    "uploads/#{model.id}"
   end
 
   def cache_dir

@@ -13,13 +13,8 @@
 
   <div class="tiptop">
     <div style="width:980px;margin:0 auto;">
-      <h1 style="float:left;width:100px;font-size:22px;"><span><a href="/">USEPHORIA</a></span></h1>  
-      <ul>
-        <li><%= link_to 'Dashboard', clients_root_path %></li>
-        <li><%= link_to 'Create a test', new_clients_ab_test_path %></li>
-        <li><%= link_to "Take a test", testers_root_path %></li>
-        <li class="signin"><a href="users_sign_out_path">Logout</a></li>
-      </ul>
+      <h1 style="float:left;width:100px;font-size:22px;"><span><a href="/">USEPHORIA</a></span></h1>
+      <%= render "/nav" %>
     </div>
   </div>
 

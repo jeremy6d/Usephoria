@@ -1,18 +1,16 @@
 %h2 My Tests
 %table
   %th Title
-  %th Engagement
   %th Results
   %th
   - @test_definitions.each do |defn|
     %tr{ id: defn.to_param }
       %td= defn.title
-      %td= defn.results.count
-      %td= defn.aggregate_result
+      %td= link_to defn.aggregate_result, clients_test_results_path(defn)
       %td
         %ul.actions
           %li.preview Preview
           %li.edit= link_to "Edit", [:edit, :clients, defn]
           %li.delete= link_to "Delete", [:clients, defn], method: :delete, confirm: "Are you sure?"
-= link_to "Create new A/B test", new_clients_ab_test_path
-= link_to "Create new Yes/No test", new_clients_yn_test_path
+%button= link_to "Create new A/B test", new_clients_ab_test_path
+%button= link_to "Create new Yes/No test", new_clients_yn_test_path

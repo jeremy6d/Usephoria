@@ -3,7 +3,7 @@ require 'role_model'
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
-  
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -48,7 +48,5 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
   # attr_accessible :title, :body
 
-  include RoleModel
-  roles_attribute :roles_mask
-  roles :tester, :client, :admin
+  field :role, type: String
 end

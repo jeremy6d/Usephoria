@@ -7,11 +7,11 @@
 
 <div id="tests">
 	<%- @tests.each do |test| %>
-	    <div class="test" id="test-<%= test.to_param %>">
+	    <div class="tester-test" id="test-<%= test.to_param %>">
 	        <span class="test-payout">
 	        	<%= number_to_currency test.payout %>
 	        </span>
-	        <span class="test-title" style="background: url('<%= test.image_a.url(:presentation) %>');"></span>
+	        <span class="test-title" style="background-image: url('<%= test.image_a.url(:presentation) %>');"></span>
 
 	        <span class="test-link">
 	            <h4><%= test.title %></h4>

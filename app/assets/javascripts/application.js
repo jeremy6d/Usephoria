@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require_tree .
+
+$(document).ready(function() {
+  $('span.close').click(function() {
+    $(this).parent().hide();
+  });
+});

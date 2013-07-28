@@ -1,0 +1,24 @@
+= link_to "Clone", "#"
+|
+= link_to "View demographics", "#"
+%h3 Summary
+.balance
+  Balance:
+  %span= number_to_currency @test.balance
+  = link_to "[+]", "#"
+%hr/
+%div.question= @test.question
+%h3 Responses
+%hr/
+= render partial: "test_definitions/#{@test.model_name}"
+%h3 Comments
+%hr/
+%table.comments
+  - @test.results.where(:comment.nin => [nil, ""]).each_with_index do |result, i|
+    %tr{class: "#{'odd' if i.odd?}"}
+      %td
+        %p= result.comment
+      %td{ width: "15%" }
+        %span.comment-rating
+          = link_to "[X]", "#"
+          = link_to "[,/]", "#"

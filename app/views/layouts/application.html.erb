@@ -19,12 +19,7 @@
   </div>
 
   <header style="height:10px;"></header>
-    <% unless flash.empty? %>
-      <flash>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      </flash>
-    <% end %>
+    <%= render(partial: "shared/flash", locals: { flash: flash }) unless flash.nil? || flash.empty?  %>
     <content>
         <div id="container">
             <%= yield %>

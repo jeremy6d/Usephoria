@@ -5,8 +5,12 @@ Usephoria::Application.routes.draw do
     root to: "test_definitions#index"
   end
 
-  scope "testers" do
-    root to: 'tests_controller#index'
+  namespace "testers" do
+    resources :tests, :except => :index do
+      resources :results
+    end
+    
+    root to: 'tests#index'
   end
 
   devise_for :users

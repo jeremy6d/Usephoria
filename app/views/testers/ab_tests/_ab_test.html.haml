@@ -1,0 +1,15 @@
+%ul.a-b-choices
+  %li.choice#a
+    .picture
+      = link_to @test.image_a.url do
+        = image_tag @test.image_a.url(:presentation)
+    .input
+      = form.radio_button :answer, "A"
+      = form.label :answer, "A"
+  %li.choice#b
+    .picture
+      = link_to @test.image_b.url do
+        = image_tag @test.image_b.url(:presentation)
+    .input
+      = form.radio_button :answer, "B"
+      = form.label :answer, "B"

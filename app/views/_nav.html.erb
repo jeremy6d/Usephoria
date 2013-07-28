@@ -1,0 +1,18 @@
+<% if(user = current_user()) %>
+    <ul>
+        <% if(user.role == 'client') %>
+            <li><%= link_to 'Dashboard', clients_root_path %></li>
+            <li><%= link_to 'Create a test', new_clients_ab_test_path %></li>
+        <% else %>
+            <li><%= link_to 'Dashboard', clients_root_path %></li>
+            <li><%= link_to "Take a test", testers_root_path %></li>
+        <% end %>
+        <li class="signin"><a href="users_sign_out_path">Logout</a></li>
+    </ul>
+<% else %>
+    <ul>
+        <li><%= link_to( 'How it works', static_howItWorks_path ) %></li>
+        <li><%= link_to( 'Create account', new_user_registration_path ) %></li>
+        <li class="signin"><%= link_to( 'Sign in', user_session_path ) %></li>
+    </ul>
+<% end %>

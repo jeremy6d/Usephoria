@@ -12,11 +12,7 @@
   </head>
   <body>
   <div class="tiptop">
-    <ul>
-      <li><%= link_to( 'How it works', controller: 'static', action: 'howItWorks' ) %></li>
-      <li><%= link_to( 'Create account', new_user_registration_path ) %></li>
-      <li class="signin"><%= link_to( 'Sign in', user_session_path ) %></li>
-    </ul>
+      <%= render "/nav" %>
   </div>
   
   <header>

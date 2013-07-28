@@ -7,7 +7,7 @@
             <li><%= link_to 'Dashboard', clients_root_path %></li>
             <li><%= link_to "Take a test", testers_root_path %></li>
         <% end %>
-        <li class="signin"><a href="users_sign_out_path">Logout</a></li>
+        <li class="signin"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
     </ul>
 <% else %>
     <ul>

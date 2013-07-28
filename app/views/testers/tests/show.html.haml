@@ -2,6 +2,6 @@
 = simple_form_for @result, :url => testers_test_results_path(@test) do |form|
   %p.question= @test.question
   = render @test, :form => form
-  = form.input :comments, as: :text, label: "Other comments"
+  = form.input :comments, as: :text, label: "Give us your thoughts!<br />Minimum 140 characters"
   .form-actions
-    = form.button :submit, "Submit your answer!"
+    = form.button :submit, "Submit your answer!", class: "button-submit"

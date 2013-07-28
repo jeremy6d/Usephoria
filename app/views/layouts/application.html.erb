@@ -5,12 +5,16 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <script type="text/javascript" src="//use.typekit.net/yma3kus.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
   </head>
+  <body>
   <header>
     <h1>usephoria</h1>
     <nav><ul><li>Home</li><li>New Project</li><li>Logout</li></ul></nav>
   </header>
-  <body>
+  
     <flash>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
@@ -18,5 +22,6 @@
     <content> 
       <%= yield %>
     </content>
+    <footer>THIS IS THE FOOTER</footer>
   </body>
 </html>

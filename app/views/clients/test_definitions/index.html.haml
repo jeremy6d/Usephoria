@@ -1,14 +1,12 @@
 %h2 My Tests
 %table
   %th Title
-  %th Engagement
   %th Results
   %th
   - @test_definitions.each do |defn|
     %tr{ id: defn.to_param }
       %td= defn.title
-      %td= defn.results.count
-      %td= defn.aggregate_result
+      %td= link_to defn.aggregate_result, clients_test_results_path(defn)
       %td
         %ul.actions
           %li.preview Preview

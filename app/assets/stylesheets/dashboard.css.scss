@@ -8,10 +8,8 @@
 
 .test:nth-child(odd) { background-color: #fff; }
 
-table.comments tr.odd {background:#eee;padding:0px 20px}
-table.comments td {padding:5px 20px;}
 
-.test-detail { display: none; margin-left: 30px; width: 75%; }
+
 .balance { float: right; }
 
 #tests-header {
@@ -21,11 +19,40 @@ table.comments td {padding:5px 20px;}
 
 #tests {
 	.test {
-		padding: 10px;
+		padding: 15px;
 		width:100%;
+		.test-detail { 
+			display: none; 
+			margin-left: 0px; 
+			width: 100%; 
+			padding-top:40px;
+			h3 {
+				padding-top:20px;
+				padding-bottom: 0px;
+				margin-bottom: 0px;
+				clear:both;
+			}
+			.response {
+				float:left;
+				width:48%;
+				padding-right:2%;
+				img {
+					width: 70px;
+				}
+			}
+			table.comments td {
+				padding:5px 20px;
+				&.odd {
+					background:transparent;
+					padding:0px 20px;
+				}
+			}
+		}
 	}
 	.odd {
 		background:#eee;
+		border-top: solid 1px #ccc;
+		border-bottom: solid 1px #ccc;
 	}
 }
 

@@ -2,6 +2,7 @@
   .form-inputs
     = form.input :title
     = form.input :active, as: :boolean
+    = form.input :budget, as: :numeric, hint: "in dollars"
     = form.input :user_goal, as: :hidden
     = form.label :user_goal, "Target number of users"
     %span#user-slider

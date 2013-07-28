@@ -1,14 +1,13 @@
 class Testers::ResultsController < Testers::BaseController
   def create
     @test = TestDefinition.find params[:test_id]
-    @result = @test.results.build params[:test_results]
-    
-    # record who took it
+    @result = @test.results.build params[:test_result]
 
     if @result.save
-      render :show
+      flash[:notice] = "Thank you for taking the test!"
+      redirect_to testers_root_path
     else
-      render :new
+      render "testers/tests/show"
     end
   end
 end

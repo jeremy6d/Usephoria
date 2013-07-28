@@ -6,6 +6,9 @@
     = form.label :user_goal, "Target number of users"
     %span#user-slider
     %span#users-count
+    x
+    = number_to_currency @ab_test.payout
+    \=
     $
     %span#pricing
     /= form.input :payout, as: :numeric, hint: "in dollars"

@@ -24,5 +24,6 @@ Usephoria::Application.routes.draw do
   get "static/test"
   get "static/newTest"
   get "static/landing"
+
   root :to => "static#landing"
 end

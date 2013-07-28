@@ -10,10 +10,33 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
+
+  <div class="tiptop">
+    <ul>
+      <li><a href="#">How it works</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li class="signin"><a href="#">Sign in</a></li>
+    </ul>
+  </div>
+
   <header>
-    <h1>usephoria</h1>
-    <nav><ul><li>Home</li><li>New Project</li><li>Logout</li></ul></nav>
+    <div class="header">
+    <div class="header-left">
+
+      <h1><span>USEPHORIA</span></h1>   
+      <h2>Dead simple user testing</h2>
+      <p class="tagline">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <button class="calltoaction">Start your free trial</button>
+      
+    </div>
+    <div class="header-right">
+            <img src="<%= asset_path 'sketch.png' %>" alt="sketch" width="450px" style="margin-top:20px;" />
+
+
+    </div>
+    </div>
   </header>
+
   
     <flash>
       <p class="notice"><%= notice %></p>
@@ -23,7 +46,10 @@
       <%= yield %>
     </content>
     <footer>
-      <div class="footer">UsePhoria</div>
+    <div class="footer">
+        <p>UsePhoria is a start up developed at RVA Startup weekend, 2013.</p> 
+        <p>Bradley | Jeremy | Giuseppe | Tiffany | Joshua</p>
+    </div>
     </footer>
   </body>
 </html>

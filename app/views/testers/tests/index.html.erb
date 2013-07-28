@@ -14,7 +14,7 @@
 	        <span class="test-link">
 	            <h4><%= test.title %></h4>
 	            <p><%= test.question %></p>
-	            <%= button_to "Take Test", testers_test_path(test), method: :get %>
+	            <button><%= link_to "Take Test", testers_test_path(test), method: :get %></button>
 	        </span>
 	    </div>
 	<%- end %>

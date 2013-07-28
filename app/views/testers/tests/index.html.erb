@@ -8,13 +8,17 @@
 <div id="tests">
 	<%- @tests.each do |test| %>
 	    <div class="test" id="test-<%= test.to_param %>">
-	        <span class="test-payout">$1.00</span>
-	        <span class="test-title" style="background: url('<%= asset_path 'demo1.png' %>');"></span>
+	        <span class="test-payout">
+	        	<%= number_to_currency test.payout %>
+	        </span>
+	        <span class="test-title" style="background: url('<%= test.image_a.url(:presentation) %>');"></span>
 
 	        <span class="test-link">
 	            <h4><%= test.title %></h4>
 	            <p><%= test.question %></p>
-	            <%= button_to "Take Test", testers_test_path(test), method: :get %>
+	            <button>
+	            	<%= link_to "Take this test!", testers_test_path(test) %>
+	            </button>
 	        </span>
 	    </div>
 	<%- end %>

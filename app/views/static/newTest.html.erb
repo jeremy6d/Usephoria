@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag 'newTest' %>
+
+<%= form_tag do %>
+    <div>
+        <%= label_tag(:q, 'Test Name:', class: 'big-label') %>
+        <%= text_field_tag(:q) %>
+    </div>
+    <div>
+        <%= label_tag(:q, 'Summary:', class: 'big-label') %>
+        <%= text_area_tag(:q) %>
+    </div>
+    <div>
+        <%= label_tag(:q, 'Number of Users:', class: 'big-label') %>
+        <%= hidden_field_tag(:q) %>
+        <div id="user-slider"></div>
+    </div>
+    <%= submit_tag('Create') %>
+<% end %>

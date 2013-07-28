@@ -2,17 +2,21 @@
 
 <%= form_tag do %>
     <div>
-        <%= label_tag(:q, 'Test Name:', class: 'big-label') %>
-        <%= text_field_tag(:q) %>
+        <%= label_tag(:name, 'Test Name:', class: 'big-label') %>
+        <%= text_field_tag(:name) %>
     </div>
     <div>
-        <%= label_tag(:q, 'Summary:', class: 'big-label') %>
-        <%= text_area_tag(:q) %>
+        <%= label_tag(:summary, 'Summary:', class: 'big-label') %>
+        <%= text_area_tag(:summary) %>
     </div>
     <div>
-        <%= label_tag(:q, 'Number of Users:', class: 'big-label') %>
-        <%= hidden_field_tag(:q) %>
-        <div id="user-slider"></div>
+        <%= label_tag(:users, 'Number of Users:', class: 'big-label') %>
+        <%= hidden_field_tag(:users) %>
+        <span id="user-slider"></span><span id="users-count">5</span>
+    </div>
+    <div>
+        <%= label_tag(:users, 'Number of Users:', class: 'big-label') %>
+        $<span id="pricing"></span>
     </div>
     <%= submit_tag('Create') %>
 <% end %>

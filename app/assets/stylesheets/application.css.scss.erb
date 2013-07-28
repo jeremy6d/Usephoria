@@ -1,5 +1,6 @@
 /*
  *= require jquery.ui.all
+ *= require newTest
  */
 
 /* USEPHORIA */
@@ -14,10 +15,19 @@ body {
 	min-width:980px;
 }
 
+a {color:#369;}
+
 header { color: black; }
 nav > ul > li { float: left; list-style: none; margin-left: 5px; }
 nav > ul { clear: both; }
-#container { width: 800px; margin: 0 auto; }
+#container { 
+	width: 980px; 
+	margin: 0 auto; 
+	padding-bottom: 60px;
+	padding-top:20px;
+	min-height:500px;
+}
+
 
 .highlight {
 	background: #34495e;
@@ -51,6 +61,10 @@ h1 {
 	span {
 		color:lightgoldenrodyellow;
 		font-weight:300;
+	}
+	a {
+		text-decoration:none;
+		color:lightgoldenrodyellow;
 	}
 }
 
@@ -102,7 +116,6 @@ header {
 	background-size: 100%;
 	width:100%;
 	color:#fff;
-	min-height:200px;
 }
 
 .header {
@@ -177,7 +190,7 @@ button:hover {
 
 .midsection {
 	width:980px;
-	padding:20px 20px 60px 20px;
+	padding:40px 20px 90px 20px;
 	margin:0 auto;
 	overflow:hidden;
 }
@@ -185,18 +198,45 @@ button:hover {
 .col1 {
 	float:left;
 	width:29%;
-	margin-right:6%;
+	margin-right:3%;
+	padding-right:3%;
+	border-right: solid 1px #ccc;
 }
 
 .col2 {
 	float:left;
 	width:29%;
-	margin-right:6%;
+	margin-right:3%;
+	padding-right:3%;
+	border-right: solid 1px #ccc;
 }
 
 .col3 {
 	float:left;
 	width:29%;
+}
+
+
+footer {
+	background:#333;
+
+	.footer {
+		margin:0 auto;
+		width:980px;
+		padding:20px;
+		color:#fff;
+		overflow:hidden;
+		.description {
+			color:lightyellow;
+			float:right;
+			width:27%;
+			padding-left:3%
+		}
+		.developers {
+			float:left;
+			width:47%;
+		}
+	}
 }
 
 

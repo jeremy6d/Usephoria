@@ -1,0 +1,13 @@
+%h2 My Tests
+%table
+  %th Title
+  %th Engagement
+  %th Results
+  %th
+  - @test_definitions.each do |defn|
+    %tr{ id: defn.to_param }
+      %td= defn.title
+      %td= defn.results.count
+      %td= defn.aggregate_result
+= link_to "Create new A/B test", new_ab_test_path
+= link_to "Create new Yes/No test", new_yn_test_path

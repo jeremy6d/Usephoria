@@ -1,3 +1,6 @@
+/*
+ *= require jquery.ui.all
+ */
 
 /* USEPHORIA */
 
@@ -8,12 +11,13 @@ body {
 	padding:0px;
 	color:#222;
 	font-size:100%;
+	min-width:980px;
 }
 
 header { color: black; }
 nav > ul > li { float: left; list-style: none; margin-left: 5px; }
 nav > ul { clear: both; }
-
+#container { width: 800px; margin: 0 auto; }
 
 .highlight {
 	background: #34495e;
@@ -122,7 +126,7 @@ header {
 	text-align:right;
 }
 
-
+h1 {}
 p.tagline {line-height:1.5;font-size:16px;}
 
 button {	
@@ -130,7 +134,7 @@ button {
 	background: #d35400;
 	border: none;
 	border-radius: 3px;
-	font-size: 16px;
+	font-size: 20px;
 	color: #fff;
 	-webkit-box-shadow: 3px 3px 0px rgba(110, 72, 3,1.0);
 	-moz-box-shadow: 3px 3px 0px rgba(110, 72, 3,1.0);
@@ -144,7 +148,20 @@ button:hover {
 }
 
 
+/* HIGHLIGHT */
 
+
+.highlight {
+	background: #34495e;
+	color:#fff;
+	width: 600px;
+	margin-top: -40px;
+	position: absolute;
+	padding: 10px 50px;
+	border-radius: 5px;
+	left: 25%;
+	text-align: center;
+}
 
 
 /* MID SECTION */

@@ -8,6 +8,7 @@ body {
 	padding:0px;
 	color:#222;
 	font-size:100%;
+	min-width:980px;
 }
 
 header { color: black; }
@@ -155,31 +156,48 @@ button:hover {
 	background:#eee;
 	min-height:100px;
 	color:#222;
-	padding-top:50px;
+	padding-top:70px;
+	padding-bottom:70px;
+
+	.midsection {
+		width:980px;
+		padding:20px 20px 60px 20px;
+		margin:0 auto;
+		overflow:hidden;
+		h2 {
+			margin-bottom:10px;
+		}
+		.col1 {
+			float:left;
+			width:29%;
+			margin-right:3%;
+			padding-right:3%;
+			border-right: solid 1px #ccc;
+		}
+
+		.col2 {
+			float:left;
+			width:29%;
+			margin-right:3%;
+			padding-right:3%;
+			border-right: solid 1px #ccc;
+		}
+
+		.col3 {
+			float:left;
+			width:29%;
+		}
+	}
 }
 
-.midsection {
-	width:980px;
-	padding:20px 20px 60px 20px;
-	margin:0 auto;
-	overflow:hidden;
+footer {
+	background: #444;
+	color:#fff;
+	.footer {
+		width:980px;
+		margin:0 auto;
+		min-height:100px;
+		padding:10px;
+	}
 }
-
-.col1 {
-	float:left;
-	width:29%;
-	margin-right:6%;
-}
-
-.col2 {
-	float:left;
-	width:29%;
-	margin-right:6%;
-}
-
-.col3 {
-	float:left;
-	width:29%;
-}
-
 

@@ -9,7 +9,9 @@ class AbTest < TestDefinition
                   :image_b,
                   :image_b_cache,
                   :question,
-                  :title
+                  :title,
+                  :active,
+                  :user_goal
 
   def aggregate_result
     a_count = results.where(:answer => "A").count

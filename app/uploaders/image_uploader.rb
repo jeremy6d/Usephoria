@@ -7,6 +7,16 @@ class ImageUploader < CarrierWave::Uploader::Base
     "public/uploads/#{model.id}"
   end
 
+  def cache_dir
+    "/tmp/usephoria"
+  end
+
+  def filename
+    "#{mounted_as}.png"
+  end
+
+  process :convert => 'png'
+
   version :presentation do
     process :resize_to_fit => [300, nil]
   end

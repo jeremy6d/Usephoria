@@ -1,16 +1,20 @@
 %h2 My Tests
-%table
-  %th Title
-  %th Results
-  %th
-  - @test_definitions.each do |defn|
-    %tr{ id: defn.to_param }
-      %td= defn.title
-      %td= link_to defn.aggregate_result, clients_test_results_path(defn)
-      %td
-        %ul.actions
-          %li.preview Preview
-          %li.edit= link_to "Edit", [:edit, :clients, defn]
-          %li.delete= link_to "Delete", [:clients, defn], method: :delete, confirm: "Are you sure?"
+#test-dashboard
+  #tests-header
+    %span.test-name Project
+    %span.test-budget Balance
+    %span.test-responses Results
+    %span.test-winner Winning Choice
+    %span.test-link
+  #tests
+    - @test_definitions.each_with_index do |defn, i|
+      %div{ class: "test #{'odd' if i.odd?}" }
+        .test-heads-up
+          %span.test-name= link_to defn.title, clients_test_results_path(defn), remote: true
+          %span.test-budget= number_to_currency(defn.budget)
+          %span.test-responses= defn.results.count
+          %span.test-winner= defn.winner
+          %span.test-link= link_to "View", [:clients, defn]
+        %div{ id: "test-detail-#{defn.to_param}", class: "test-detail" }
 %button= link_to "Create new A/B test", new_clients_ab_test_path
 %button= link_to "Create new Yes/No test", new_clients_yn_test_path

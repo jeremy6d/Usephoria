@@ -1,0 +1,8 @@
+%span.response-count= @test.results.where(:answer => "A").count
+= link_to "#" do
+  = image_tag @test.image_a.url(:presentation)
+A
+%span.response-count= @test.results.where(:answer => "B").count
+= link_to "#" do
+  = image_tag @test.image_b.url(:presentation)
+B

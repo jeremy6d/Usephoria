@@ -5,6 +5,7 @@ class TestDefinition
   field :title, type: String
   field :active, type: Boolean, default: true
   field :user_goal, type: Integer, default: 0
+  field :price, type: Integer, default: 1
 
   # belongs_to :author, class_name: "User"
   has_many :results, class_name: "TestResult"

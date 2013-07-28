@@ -1,0 +1,6 @@
+%h2= @yes_or_no_test.title
+%h3= @yes_or_no_test.question
+%ul.a-b-display
+  %li= image_tag @yes_or_no_test.image_a.url(:presentation)
+= link_to 'Edit', edit_clients_yn_test_path(@yes_or_no_test)
+= link_to 'Back', clients_root_path

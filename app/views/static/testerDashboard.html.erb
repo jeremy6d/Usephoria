@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag 'testerDashboard' %>
+
+<h2>Next Payout: $<span id="money-earned">30.00</span>
+<span id="tests-taken-wrapper">Tests Taken: <span id="tests-taken">110</span></span></h2>
+
+<h2>Available Tests</h2>
+<hr />
+<div id="tests">
+    <div class="test">
+        <span class="test-title">Rate our Logo</span>
+        <span class="test-payout">$1.00</span>
+        <span class="test-link"><%= link_to("Take Test", controller: 'static', action: 'test') %></span>
+    </div>
+    <div class="test">
+        <span class="test-title">Too many homepages!</span>
+        <span class="test-payout">$1.00</span>
+        <span class="test-link"><%= link_to("Take Test", controller: 'static', action: 'test') %></span>
+    </div>
+</div>
+<div style="clear: both;"></div>

@@ -11,6 +11,8 @@ Usephoria::Application.routes.draw do
   devise_for :users
 
   get "static/dashboard"
+  get "static/testerDashboard"
+  get "static/test"
   get "static/newTest"
   get "static/landing"
   root :to => "static#landing"

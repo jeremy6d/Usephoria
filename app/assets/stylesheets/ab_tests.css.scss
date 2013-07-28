@@ -3,23 +3,3 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-p.question {
-	margin-bottom: 50px;
-}
-
-ul.a-b-choices {
-	list-style-type:none;
-	margin-left:-40px;
-		li {
-			display:inline-block;
-			width:45%;
-			padding-right:5%;
-			&#b {
-				padding-right:0px;
-		}
-			img {
-				width: 350px;
-				overflow:hidden;
-		}
-	}
-}

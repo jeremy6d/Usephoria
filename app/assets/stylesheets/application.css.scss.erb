@@ -190,9 +190,20 @@ button:hover {
 
 .midsection {
 	width:980px;
-	padding:40px 20px 90px 20px;
+	padding:60px 20px 90px 20px;
 	margin:0 auto;
 	overflow:hidden;
+	div {
+		height:250px;
+		h2 {
+		&:before {
+			content: "\201C";
+			}
+		&:after {
+			content: "\201D";
+			}
+		}
+	}
 }
 
 .col1 {
@@ -214,6 +225,43 @@ button:hover {
 .col3 {
 	float:left;
 	width:29%;
+}
+
+
+p.question {
+	margin-bottom: 50px;
+}
+
+ul.a-b-choices {
+	list-style-type:none;
+	margin-left:-40px;
+		li {
+			display:inline-block;
+			width:45%;
+			padding-right:5%;
+			&#b {
+				padding-right:0px;
+		}
+			img {
+				width: 350px;
+				overflow:hidden;
+		}
+		input[type="radio"] {
+		    -webkit-appearance: checkbox;
+		    -moz-appearance: checkbox;
+		    -ms-appearance: checkbox;     /* not currently supported */
+		    -o-appearance: checkbox;      /* not currently supported */
+		}
+		.input {
+			padding: 10px;
+			background: #ccc;
+		}
+		.picture {
+			text-align: center;
+			background: #eee;
+			padding: 30px 0px;
+		}
+	}
 }
 
 

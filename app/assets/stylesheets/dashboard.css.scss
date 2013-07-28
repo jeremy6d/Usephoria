@@ -6,9 +6,12 @@
 .test-winner { width: 150px; }
 .test-link { width: 50px; }
 
-.test:nth-child(odd) { background-color: grey; }
+.test:nth-child(odd) { background-color: #fff; }
 
-.test-detail { /*display: none;*/ margin-left: 30px; width: 75%; }
+table.comments tr.odd {background:#eee;padding:0px 20px}
+table.comments td {padding:5px 20px;}
+
+.test-detail { display: none; margin-left: 30px; width: 75%; }
 .balance { float: right; }
 
 .response { font-size: 40px; }

@@ -1,3 +1,4 @@
+ruby   '2.0.0'
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
@@ -8,6 +9,9 @@ gem 'thin'
 gem "mongoid", "~> 3.0.0"
 gem 'haml-rails'
 gem 'simple_form'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mini_magick'
+gem 'inherited_resources'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

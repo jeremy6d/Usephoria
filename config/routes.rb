@@ -1,15 +1,16 @@
 Usephoria::Application.routes.draw do
-  
-  resources :test_definitions
+  scope "clients" do
+    resources :ab, as: "ab_tests", controller: "ab_tests", except: :index
+    resources :yes_or_no, as: "yn_tests", controller: "yes_or_no_tests", except: :index
+    root to: "test_definitions#index", as: :clients_root
+  end
 
-  devise_for :users #do 
-    #get "/", :to => "devise/registrations#new"
-  #end
+  scope "testers" do
+  end
+
+  devise_for :users
 
   get "static/dashboard"
   get "static/landing"
   root :to => "static#landing"
-
-
-  #root :to => "devise/registrations#new"
 end

@@ -1,0 +1,17 @@
+<%= form_for(@yes_or_no_test) do |f| %>
+  <% if @yes_or_no_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@yes_or_no_test.errors.count, "error") %> prohibited this yes_or_no_test from being saved:</h2>
+
+      <ul>
+      <% @yes_or_no_test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

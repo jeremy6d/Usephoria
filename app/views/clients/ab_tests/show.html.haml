@@ -1,0 +1,7 @@
+%h2= @ab_test.title
+%h3= @ab_test.question
+%ul.a-b-display
+  %li= image_tag @ab_test.image_a.url(:presentation)
+  %li= image_tag @ab_test.image_b.url(:presentation)
+= link_to 'Edit', edit_clients_ab_test_path(@ab_test)
+= link_to 'Back', clients_root_path

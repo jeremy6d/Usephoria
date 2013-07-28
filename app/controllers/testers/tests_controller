@@ -1,0 +1,3 @@
+class Testers::TestsController < Testers::BaseController
+
+end

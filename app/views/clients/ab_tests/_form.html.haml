@@ -1,0 +1,10 @@
+= simple_form_for [:clients, @ab_test], html: { multipart: true } do |form|
+  .form-inputs
+    = form.input :title
+    = form.input :active, as: :boolean
+    = form.input :user_goal, as: :numeric
+    = form.input :question, placeholder: "Which picture is better?", hint: "Describe why a tester would pick A or B"
+    = form.input :image_a, as: :file
+    = form.input :image_b, as: :file
+  .form-actions
+    = form.button :submit, "Save"

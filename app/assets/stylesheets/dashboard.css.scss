@@ -1,0 +1,19 @@
+#tests-header > span { font-weight: bold; }
+#test-dashboard span { display: inline-block; }
+.test-name { width: 200px; }
+.test-budget { width: 100px; }
+.test-responses { width: 100px; }
+.test-winner { width: 150px; }
+.test-link { width: 50px; }
+
+.test:nth-child(odd) { background-color: grey; }
+
+.test-detail { /*display: none;*/ margin-left: 30px; width: 75%; }
+.balance { float: right; }
+
+.response { font-size: 40px; }
+.response-count { font-size: 50px; font-weight: bold; width: 100px; }
+.response > img { width: 59px; height: 59px; vertical-align: bottom; margin: 0 5px; }
+
+.comment { font-size: 20px; }
+.comment-rating { float: right; }

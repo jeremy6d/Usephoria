@@ -14,7 +14,7 @@
   - @test.results.where(:comment.nin => [nil, ""]).each_with_index do |result, i|
     %tr{class: "#{'odd' if i.odd?}"}
       %td
-        %p= result.comment
+        %p= result.comments
       %td{ width: "15%" }
         %span.comment-rating
           = link_to "[X]", "#"

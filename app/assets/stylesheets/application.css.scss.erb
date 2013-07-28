@@ -331,14 +331,23 @@ footer {
 }
 
 
-ul#flash %li {
-	margin: 30% 0;
-}
+ul#flash {
+	.close {
+		float: right;
+	}
 
-ul#flash %li.notice {
-	background-color: yellow;
-}
+	li {
+	margin: 0 30%;
+	padding: 10px;
+	width: 30%;
+  list-style-type: none;
+	}
+		li.notice {
+			background-color: yellow;
+		}
 
-ul#flash %li.alert {
-	background-color: lightcoral;
+		li.alert {
+			background-color: lightcoral;
+		}
+	
 }

@@ -14,7 +14,13 @@
           %span.test-budget= number_to_currency(defn.budget)
           %span.test-responses= defn.results.count
           %span.test-winner= defn.winner
-          %span.test-link= link_to "View", [:clients, defn]
+          %span.test-link
+            - if defn.is_a?(AbTest)
+              = link_to "Edit", edit_clients_ab_test_path(defn)
+            - else
+              = link_to "Edit", edit_clients_yn_test_path(defn)
         %div{ id: "test-detail-#{defn.to_param}", class: "test-detail" }
-%button= link_to "Create new A/B test", new_clients_ab_test_path
-%button= link_to "Create new Yes/No test", new_clients_yn_test_path
+= link_to new_clients_ab_test_path do
+  %button Create new A/B test
+= link_to new_clients_yn_test_path do
+  %button Create new yes/no test

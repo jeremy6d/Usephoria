@@ -1,3 +1,6 @@
+= link_to "Clone", "#"
+|
+= link_to "View demographics", "#"
 %h3 Summary
 .balance
   Balance:
@@ -7,7 +10,7 @@
 %div.question= @test.question
 %h3 Responses
 %hr/
-= render partial: "clients/test_definitions/#{@test.model_name.underscore}"
+= render partial: "test_definitions/#{@test.model_name}"
 %h3 Comments
 %hr/
 %table.comments

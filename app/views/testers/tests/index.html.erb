@@ -1,7 +1,9 @@
+<%= stylesheet_link_tag 'testerDashboard' %>
+
 <span>Next Payout: $<span id="money-earned">30.00</span>
 <span id="tests-taken-wrapper">Tests Taken: <span id="tests-taken">110</span></span></span>
 
-<h2>Available Tests</h2>
+<h2 style="margin-bottom:0px;">Available Tests</h2>
 
 <div id="tests">
 	<%- @tests.each do |test| %>
@@ -14,9 +16,9 @@
 	        <span class="test-link">
 	            <h4><%= test.title %></h4>
 	            <p><%= test.question %></p>
-	            <button>
-	            	<%= link_to "Take this test!", testers_test_path(test) %>
-	            </button>
+	            <%= link_to testers_test_path(test) do %>
+		            <button>Take this test!</button>
+		          <%- end %>
 	        </span>
 	    </div>
 	<%- end %>

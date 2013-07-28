@@ -14,8 +14,6 @@ class AbTest < TestDefinition
                   :user_goal
 
   def aggregate_result
-    a_count = results.where(:answer => "A").count
-    b_count = results.where(:answer => "B").count
 
     if a_count > b_count
       diff = a_count - b_count
@@ -25,6 +23,19 @@ class AbTest < TestDefinition
       diff = b_count - a_count
       pct = (diff * 100 / a_count).to_i
       "B by #{pct}%"
+    else
+      "Dead heat"
+    end
+  end
+
+  def winner
+    a_count = results.where(:answer => "A").count
+    b_count = results.where(:answer => "B").count
+
+    if a_count > b_count
+      "A"
+    elsif b_count > a_count
+      "B"
     else
       "Dead heat"
     end

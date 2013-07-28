@@ -7,7 +7,7 @@
     %span#user-slider
     %span#users-count
     x
-    = number_to_currency @ab_test.payout
+    = number_to_currency(@ab_test.payout + 0.15)
     \=
     $
     %span#pricing

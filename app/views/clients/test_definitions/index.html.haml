@@ -16,5 +16,6 @@
           %span.test-winner= defn.winner
           %span.test-link= link_to "View", [:clients, defn]
         %div{ id: "test-detail-#{defn.to_param}", class: "test-detail" }
-%button= link_to "Create new A/B test", new_clients_ab_test_path
-%button= link_to "Create new Yes/No test", new_clients_yn_test_path
+%button= link_to "Create new test", new_clients_ab_test_path
+-#%button= link_to "Create new A/B test", new_clients_ab_test_path
+-#%button= link_to "Create new Yes/No test", new_clients_yn_test_path

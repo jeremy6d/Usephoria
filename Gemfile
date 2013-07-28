@@ -25,6 +25,10 @@ group :development do
   gem 'letter_opener'
 end
 
+group :production do
+  gem "fog"
+end
+
 group :test do
   gem 'mocha'
   gem 'mailcatcher' 

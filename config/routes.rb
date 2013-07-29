@@ -18,12 +18,9 @@ Usephoria::Application.routes.draw do
 
   devise_for :users
 
-  get "static/dashboard"
-  get "static/testerDashboard"
-  get "static/howItWorks"
-  get "static/test"
-  get "static/newTest"
-  get "static/landing"
-
   root :to => "static#landing"
+
+  constraints :format => "html" do
+    get "/:action" => "static#:action", :as => "static_page"
+  end
 end

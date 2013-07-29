@@ -10,7 +10,7 @@
     </ul>
 <% else %>
     <ul>
-        <li><%= link_to( 'How it works', static_howItWorks_path ) %></li>
+        <li><%= link_to( 'How it works', static_page_path(action: "how-it-works") ) %></li>
         <li><%= link_to( 'Create account', new_user_registration_path ) %></li>
         <li class="signin"><%= link_to( 'Sign in', user_session_path ) %></li>
     </ul>

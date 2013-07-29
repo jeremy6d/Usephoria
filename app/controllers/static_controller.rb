@@ -1,14 +1,6 @@
 class StaticController < ApplicationController
-  def dashboard
-  end
-  def newTest
-  end
-  def testerDashboard
-  end
-  def test
-  end
-  def howItWorks
-  end
+  skip_before_filter :hide_from_public
+  
   def landing
     if(user = current_user())
       if(user.role == 'client')
@@ -19,5 +11,13 @@ class StaticController < ApplicationController
       return
     end
 	  render :layout => false
+  end
+
+  def method_missing method_name
+    if template_exists? "/static/#{method_name}"
+      render "#{method_name}"
+    else
+      raise ActionController::RoutingError.new("not_found")
+    end
   end
 end

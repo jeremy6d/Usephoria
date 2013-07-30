@@ -30,7 +30,7 @@ group :production do
 end
 
 group :test do
-  gem 'mocha'
+  gem 'mocha', :require => 'mocha/api'
   gem 'mailcatcher' 
   gem 'fabrication'
   gem 'database_cleaner'

@@ -1,2 +1,0 @@
-Fabricator(:question) do
-end

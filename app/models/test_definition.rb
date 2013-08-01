@@ -7,9 +7,9 @@ class TestDefinition
   field :active, type: Boolean, default: true
   field :user_goal, type: Integer, default: 0
 
-  currency_field :payout, 100
+  currency_field :payout, 1
   currency_field :budget
-  currency_field :fee, 50
+  currency_field :fee, 0.5
 
   # belongs_to :author, class_name: "User"
   has_many :results, class_name: "TestResult"

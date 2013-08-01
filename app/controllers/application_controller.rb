@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :hide_from_public
+  before_filter :hide_from_public, if: Proc.new { Rails.env.production? }
 
 protected
   def hide_from_public

@@ -5,7 +5,7 @@ Usephoria::Application.routes.draw do
 
     get "results/:test_id" => "results#index", as: "test_results"
 
-    root to: "test_definitions#index"
+    root to: "test_definitions#index", as: :dashboard
   end
 
   namespace "testers" do
@@ -13,7 +13,7 @@ Usephoria::Application.routes.draw do
       resources :results
     end
     
-    root to: 'tests#index'
+    root to: 'tests#index', as: :dashboard
   end
 
   devise_for :users

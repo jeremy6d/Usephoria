@@ -20,7 +20,7 @@
             - else
               = link_to "Edit", edit_clients_yn_test_path(defn)
         %div{ id: "test-detail-#{defn.to_param}", class: "test-detail" }
-= link_to new_clients_ab_test_path do
+= link_to new_clients_ab_test_path, id: "new-ab-test" do
   %button Create new A/B test
-= link_to new_clients_yn_test_path do
+= link_to new_clients_yn_test_path, id: "new-yn-test" do
   %button Create new yes/no test

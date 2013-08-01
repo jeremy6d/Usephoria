@@ -4,9 +4,9 @@ class StaticController < ApplicationController
   def landing
     if(user = current_user())
       if(user.role == 'client')
-        redirect_to clients_root_path
+        redirect_to clients_dashboard_path
       else
-        redirect_to testers_root_path
+        redirect_to testers_dashboard_path
       end
       return
     end

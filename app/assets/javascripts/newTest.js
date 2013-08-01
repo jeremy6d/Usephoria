@@ -13,5 +13,7 @@ function sliderChange(event, ui) {
 function updateNumbers() {
     $('#users').val(users);
     $('#users-count').html(users);
-    $('#pricing').html(users + (users * .15));
+    var budget = users + (users * .5);
+    $('#pricing').html(budget);
+    $('#budget-field').val(budget);
 }

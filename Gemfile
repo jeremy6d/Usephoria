@@ -13,8 +13,6 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mini_magick'
 gem 'inherited_resources'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
   gem 'letter_opener'  
   gem 'rspec-rails',      '~> 2.0'
@@ -36,6 +34,7 @@ group :test do
   gem 'database_cleaner'
   gem 'email_spec'
   gem 'capybara'
+  gem 'cucumber-rails', :require => false
   # gem 'capybara-webkit'
   gem 'faker'
 end

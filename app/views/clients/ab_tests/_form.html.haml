@@ -2,19 +2,19 @@
   .form-inputs
     = form.input :title
     = form.input :active, as: :boolean
-    = form.input :budget, as: :numeric, hint: "in dollars"
+    = form.input :budget, as: :hidden, input_html: { id: "budget-field" }
     = form.input :user_goal, as: :hidden
     = form.label :user_goal, "Target number of users"
     %span#user-slider
     %span#users-count
     &times;
-    = number_to_currency(@ab_test.payout + 0.15)
+    = number_to_currency(@ab_test.single_result_cost)
     \=
     $
     %span#pricing
     /= form.input :payout, as: :numeric, hint: "in dollars"
     = form.input :question, placeholder: "Which picture is better?", hint: "Describe why a tester would pick A or B"
-    = form.input :image_a, as: :file
-    = form.input :image_b, as: :file
+    = form.input :image_a, as: :file, label: "Image A"
+    = form.input :image_b, as: :file, label: "Image B"
   .form-actions
     = form.button :submit, "Save"

@@ -1,8 +1,6 @@
 require 'spec_helper'
 
-describe TestDefinition do
-  subject { Fabricate :test_definition }
-
+shared_examples "a test definition" do
   context "with results" do
     before do
       subject.budget = 50
@@ -24,6 +22,12 @@ describe TestDefinition do
 
     it "should calculate the cost of a single result to client correctly" do
       subject.single_result_cost.should == 1.50
+    end
+
+    it "requires an author" do
+      subject.author = nil
+      subject.should_not be_valid
+      subject.errors[:author_id].should include("can't be blank")
     end
   end
 end

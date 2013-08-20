@@ -16,7 +16,7 @@ Usephoria::Application.routes.draw do
     root to: 'tests#index', as: :dashboard
   end
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   root :to => "static#landing"
 

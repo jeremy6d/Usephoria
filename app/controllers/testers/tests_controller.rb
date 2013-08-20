@@ -7,4 +7,9 @@ class Testers::TestsController < Testers::BaseController
   def show
     @result = resource.results.build
   end
+
+protected
+  def collection
+    @tests ||= current_user.tests_not_taken
+  end
 end

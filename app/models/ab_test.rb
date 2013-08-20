@@ -13,6 +13,8 @@ class AbTest < TestDefinition
                   :active,
                   :user_goal
 
+  validates :question, presence: true
+
   def aggregate_result
 
     if a_count > b_count

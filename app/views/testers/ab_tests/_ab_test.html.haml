@@ -5,11 +5,11 @@
         = image_tag @test.image_a.url(:presentation)
     .input
       = form.radio_button :answer, "A"
-      = form.label :answer, "I like this version (A)"
+      = form.label :answer_a, "I like this version (A)"
   %li.choice#b
     .picture
       = link_to @test.image_b.url do
         = image_tag @test.image_b.url(:presentation)
     .input
       = form.radio_button :answer, "B"
-      = form.label :answer, "I like this version (B)"
+      = form.label :answer_b, "I like this version (B)"

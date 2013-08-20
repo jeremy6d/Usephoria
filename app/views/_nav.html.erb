@@ -6,7 +6,7 @@
         <% else %>
             <li><%= link_to "Take a test", testers_dashboard_path %></li>
         <% end %>
-        <li class="signin"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+        <li class="signin"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, id: "sign-out-link" %></li>
     </ul>
 <% else %>
     <ul>

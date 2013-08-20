@@ -4,11 +4,20 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  module Roles
+    ALL = %w(client tester admin).collect do |role|
+      const_set role.upcase, role
+    end
+
+    VALID_ON_CREATE = ALL - [ADMIN]
+  end
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
@@ -29,10 +38,10 @@ class User
   field :last_sign_in_ip,    :type => String
 
   ## Confirmable
-  # field :confirmation_token,   :type => String
-  # field :confirmed_at,         :type => Time
-  # field :confirmation_sent_at, :type => Time
-  # field :unconfirmed_email,    :type => String # Only if using reconfirmable
+  field :confirmation_token,   :type => String
+  field :confirmed_at,         :type => Time
+  field :confirmation_sent_at, :type => Time
+  field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
   ## Lockable
   # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
@@ -49,4 +58,22 @@ class User
   # attr_accessible :title, :body
 
   field :role, type: String
+  field :tests_taken_count, type: Integer, default: 0
+
+  has_many :tests_created, class_name: "TestDefinition", 
+                           inverse_of: :author
+                           
+  validates :role, inclusion: Roles::VALID_ON_CREATE
+
+  def is_a_client?
+    role == Roles::CLIENT
+  end
+
+  def tests_taken
+    TestDefinition.active.in taker_ids: [id]
+  end
+
+  def tests_not_taken
+    TestDefinition.active.nin taker_ids: [id], author_id: id
+  end
 end

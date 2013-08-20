@@ -16,6 +16,7 @@
   
   <header>
     <div class="header">
+      <%= render(partial: "shared/flash", locals: { flash: flash }) unless flash.nil? || flash.empty?  %>
     <div class="header-left">
 
       <h1><span>USEPHORIA</span></h1>   

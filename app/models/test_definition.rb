@@ -5,14 +5,23 @@ class TestDefinition
 
   field :title, type: String
   field :active, type: Boolean, default: true
-  field :user_goal, type: Integer, default: 0
+  field :user_goal, type: Integer, default: 5
 
   currency_field :payout, 1
   currency_field :budget
   currency_field :fee, 0.5
 
-  # belongs_to :author, class_name: "User"
+  belongs_to :author, class_name: "User",
+                      inverse_of: :tests_created
+  has_and_belongs_to_many :takers, class_name: "User",
+                                   inverse_of: nil
   has_many :results, class_name: "TestResult"
+
+  validates :author_id, presence: true
+  validates :title, presence: true
+  validates :user_goal, numericality: { greater_than: 0 }
+
+  scope :active, where(active: true)
 
   def winner
     "N/A"

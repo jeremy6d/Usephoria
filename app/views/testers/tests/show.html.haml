@@ -3,6 +3,9 @@
   = render partial: "shared/error_messages", locals: { target: @result }
   %p.question= @test.question
   = render @test, :form => form
-  = form.input :comments, as: :text, label: "Give us your thoughts!<br />Minimum 140 characters"
+  %div#comment_box
+    = form.input :comments, as: :text, label: "Give us your thoughts!<br />Minimum 140 characters"
+    %span#character_count 0
   .form-actions
     = form.button :submit, "Submit your answer!", class: "button-submit"
+  %div{ :style => "clear: both;" }

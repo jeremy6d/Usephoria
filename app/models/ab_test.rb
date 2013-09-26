@@ -1,4 +1,6 @@
 class AbTest < TestDefinition
+  include SixthDensity::CurrencyField
+  
   field :question
 
   mount_uploader :image_a, ImageUploader
@@ -16,7 +18,6 @@ class AbTest < TestDefinition
   validates :question, presence: true
 
   def aggregate_result
-
     if a_count > b_count
       diff = a_count - b_count
       pct = (diff * 100 / b_count).to_i

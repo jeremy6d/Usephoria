@@ -19,4 +19,12 @@ describe TestResult do
   it "increments the taker's count" do
     @taker.tests_taken_count.should == 1
   end
+
+  it "increments the taker's balance by the payout amount" do
+    @taker.reload.balance_in_cents.should == 100
+  end
+
+  it "associates taker with test" do
+    @test.reload.takers.should include(@taker)
+  end
 end

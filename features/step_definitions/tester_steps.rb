@@ -48,12 +48,16 @@ Then /^the system confirms the test was taken$/ do
   find("ul#flash").should have_content("Thank you for taking the test!")
 end
 
-When /^I take the first A\/B test I see$/ do
+When /^I (?:take|complete)? the first A\/B test I see$/ do
   be_on! testers_dashboard_path
   raise "no ab test found" unless element = all(".abtest").first
   element.find("a.take-test-link").click
   @taken_test = AbTest.find current_path.split("/").last
   take_ab_test!
+end
+
+Then /^my payout should increase by the proper amount$/ do
+  get_payout.should == @payout + 1.00
 end
 
 def take_ab_test!

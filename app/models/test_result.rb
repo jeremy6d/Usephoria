@@ -14,15 +14,22 @@ class TestResult
   validates_uniqueness_of :taker_id, scope: :test_definition_id,
                                      message: "already took this test"
 
-  after_save :up_takers_test_count!
-  after_save :note_taker_in_test!
+  after_create Proc.new { |result|  test_definition.payout_for! result }
 
-protected
-  def up_takers_test_count!
-    taker.inc :tests_taken_count, 1
-  end
+# protected
+#   def update_entities!
+#     test_definition.payout_to! taker_id
 
-  def note_taker_in_test!
-    test_definition.push :taker_ids, taker_id
-  end
+
+#     payout_in_cents = (test_definition.payout * 100).to_i
+
+# #   instead of this, do it in the taker method directly
+# #   taker.inc(:tests_taken_count, 1).
+# #         inc(:balance_in_cents, payout_in_cents)
+#     taker.register_test_taken!
+
+#     test_definition.push :taker_ids, taker_id
+
+#     # test_owner.decremet(:balance).by(payout + fee)
+#   end
 end

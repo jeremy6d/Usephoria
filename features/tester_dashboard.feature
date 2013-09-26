@@ -27,13 +27,4 @@ Feature: Tester Dashboard
       And I am authenticated
       And I create a test
     When I navigate to the tester dashboard
-    Then I should not see the test I created
-
-
-
-  # Scenario: Take a test
-  #   Given there is 1 test created
-  #   When I take the test
-  #   Then I should be on the tester dashboard
-  #     And I should see the test I took as greyed out
-  
+    Then I should not see the test I created  

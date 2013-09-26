@@ -3,6 +3,7 @@ require 'role_model'
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include SixthDensity::CurrencyField
 
   module Roles
     ALL = %w(client tester admin).collect do |role|
@@ -57,8 +58,9 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
   # attr_accessible :title, :body
 
-  field :role, type: String
+  field :role,              type: String
   field :tests_taken_count, type: Integer, default: 0
+  currency_field :balance
 
   has_many :tests_created, class_name: "TestDefinition", 
                            inverse_of: :author
@@ -75,5 +77,14 @@ class User
 
   def tests_not_taken
     TestDefinition.active.nin taker_ids: [id], author_id: id
+  end
+
+  def debit_account! f_amount
+    inc :balance_in_cents, (User.float_to_cents(f_amount) * -1)
+  end
+
+  def payout! f_amount
+    inc :balance_in_cents, User.float_to_cents(f_amount)
+    inc :tests_taken_count, 1
   end
 end

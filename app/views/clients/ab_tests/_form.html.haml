@@ -2,7 +2,7 @@
   .form-inputs
     = form.input :title
     = form.input :active, as: :boolean
-    = form.input :budget, as: :hidden, input_html: { id: "budget-field" }
+    = form.input :total_charge, as: :hidden, input_html: { id: "total-charge-field" }
     = form.input :user_goal, as: :hidden
     = form.label :user_goal, "Target number of users"
     %span#user-slider

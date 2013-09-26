@@ -15,5 +15,5 @@ function updateNumbers() {
     $('#users-count').html(users);
     var budget = users + (users * .5);
     $('#pricing').html(budget);
-    $('#budget-field').val(budget);
+    $('#total-charge-field').val(budget);
 }

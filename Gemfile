@@ -6,7 +6,7 @@ gem 'devise'
 gem 'cancan'
 gem 'role_model'
 gem 'thin'
-gem "mongoid", "~> 3.0.0"
+gem "mongoid"
 gem 'haml-rails'
 gem 'simple_form'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'

@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mini_magick'
 gem 'inherited_resources'
+gem 'postmark-rails'
 
 group :development, :test do
   gem 'letter_opener'  

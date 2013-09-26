@@ -169,6 +169,12 @@ GEM
     origin (1.1.0)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
+    postmark (1.0.1)
+      json
+      rake
+    postmark-rails (0.5.2)
+      actionmailer (>= 3.0.0)
+      postmark (~> 1.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -276,6 +282,7 @@ DEPENDENCIES
   mini_magick
   mocha
   mongoid
+  postmark-rails
   rails (= 3.2.13)
   role_model
   rspec-rails (~> 2.0)
